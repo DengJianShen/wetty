@@ -10,6 +10,8 @@ import { loadOptions } from './term/load';
 import { configureTerm } from './term/confiruragtion';
 import { terminal as termElement } from './disconnect/elements';
 
+import './crypto-js.js'
+
 // dengjianshen
 const _CryptoJS = (window as any).CryptoJS
 const _cryptoKey = _CryptoJS.enc.Utf8.parse("eXm4xZSz3EF2szf=");
