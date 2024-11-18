@@ -42,7 +42,10 @@ const keys: any = [
 
 export function copySelected(_text: string): boolean {
   let text = _text
-  const COPY_PROTECTION_ENABLE = (window as any).VSCODE_ENV.COPY_PROTECTION_ENABLE
+  const COPY_PROTECTION_ENABLE = (window as any).COPY_PROTECTION_ENABLE
+
+  console.log((window as any).COPY_PROTECTION_ENABLE, '(window as any).COPY_PROTECTION_ENABLE')
+  console.log((window as any).parent.COPY_PROTECTION_ENABLE, '(window as any).parent.COPY_PROTECTION_ENABLE')
 
   if (COPY_PROTECTION_ENABLE && COPY_PROTECTION_ENABLE.toLowerCase() === 'true') {
 

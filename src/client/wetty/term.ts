@@ -96,7 +96,7 @@ export function terminal(socket: Socket): Term | undefined {
       event.preventDefault();
       navigator.clipboard.readText().then(clipboardText => {
         let text = clipboardText;
-        const COPY_PROTECTION_ENABLE = (window as any).VSCODE_ENV.COPY_PROTECTION_ENABLE
+        const COPY_PROTECTION_ENABLE = (window as any).COPY_PROTECTION_ENABLE
         if (COPY_PROTECTION_ENABLE && COPY_PROTECTION_ENABLE.toLowerCase() === 'true') {
 
         } else {
@@ -119,7 +119,7 @@ export function terminal(socket: Socket): Term | undefined {
     event.preventDefault();
     navigator.clipboard.readText().then(clipboardText => {
       let text = clipboardText;
-      const COPY_PROTECTION_ENABLE = (window as any).VSCODE_ENV.COPY_PROTECTION_ENABLE
+      const COPY_PROTECTION_ENABLE = (window as any).COPY_PROTECTION_ENABLE
       if (COPY_PROTECTION_ENABLE && COPY_PROTECTION_ENABLE.toLowerCase() === 'true') {
 
       } else {
