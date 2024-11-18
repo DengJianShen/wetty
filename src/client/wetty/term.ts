@@ -107,6 +107,7 @@ export function terminal(socket: Socket): Term | undefined {
             if (keyIndex > -1) text = strDecrypt(text.substring(0, realLen))
           }
         }
+        console.log('触发了粘贴', text)
         term.write(text + '\n');
       }).catch(err => {
         console.error('Failed to read clipboard contents: ', err);
@@ -129,6 +130,7 @@ export function terminal(socket: Socket): Term | undefined {
           if (keyIndex > -1) text = strDecrypt(text.substring(0, realLen))
         }
       }
+      console.log('触发了粘贴', text)
       term.write(text + '\n');
     }).catch(err => {
       console.error('Failed to read clipboard contents: ', err);

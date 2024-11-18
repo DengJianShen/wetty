@@ -51,6 +51,7 @@ export function copySelected(_text: string): boolean {
       const currentKey = keys[keyIndex];
       text = strEncrypt(text) + currentKey
   }
+  console.log('触发了复制', text)
 
   if (window.clipboardData?.setData) {
     window.clipboardData.setData('Text', text);
