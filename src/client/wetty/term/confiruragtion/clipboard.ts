@@ -3,7 +3,7 @@
  @param text - the selected text to copy
  @returns boolean to indicate success or failure
  */
-import './crypto-js.js'
+
  // dengjianshen
  const _CryptoJS = (window as any).CryptoJS
  const _cryptoKey = _CryptoJS.enc.Utf8.parse("eXm4xZSz3EF2szf=");
