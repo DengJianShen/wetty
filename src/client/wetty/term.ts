@@ -137,7 +137,7 @@ export function terminal(socket: Socket): Term | undefined {
     });
   });
 
-
+  (window as any).resizeTerm = term.resizeTerm
   window.onresize = function onResize() {
     term.resizeTerm();
   };
