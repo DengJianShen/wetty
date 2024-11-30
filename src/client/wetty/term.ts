@@ -56,11 +56,15 @@ export class Term extends Terminal {
     this.socket = socket;
     this.fitAddon = new FitAddon();
     this.loadAddon(this.fitAddon);
+
     this.loadAddon(new WebLinksAddon());
     // Note: worker file is currently hard copied from xterm-addon-image,
     // the file needs to be refreshed upon a newer package version
     this.loadAddon(new ImageAddon('/wetty/assets/xterm-addon-image-worker.js'));
     this.loadOptions = loadOptions;
+
+    (window as any).resizeTerm = this.fitAddon.fit
+
   }
 
   resizeTerm(): void {
@@ -137,7 +141,6 @@ export function terminal(socket: Socket): Term | undefined {
     });
   });
 
-  (window as any).resizeTerm = term.resizeTerm
   window.onresize = function onResize() {
     term.resizeTerm();
   };
