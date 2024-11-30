@@ -63,7 +63,7 @@ export class Term extends Terminal {
     this.loadAddon(new ImageAddon('/wetty/assets/xterm-addon-image-worker.js'));
     this.loadOptions = loadOptions;
 
-    (window as any).resizeTerm = this.fitAddon.fit
+    // (window as any).resizeTerm = this.fitAddon.fit
 
   }
 
@@ -112,7 +112,8 @@ export function terminal(socket: Socket): Term | undefined {
           }
         }
         console.log('触发了粘贴1', text)
-        term.write(text);
+        // term.write(text);
+        term.paste(text)
       }).catch(err => {
         console.error('Failed to read clipboard contents: ', err);
       });
@@ -135,7 +136,8 @@ export function terminal(socket: Socket): Term | undefined {
         }
       }
       console.log('触发了粘贴1', text)
-      term.write(text);
+      // term.write(text);
+      term.paste(text)
     }).catch(err => {
       console.error('Failed to read clipboard contents: ', err);
     });
